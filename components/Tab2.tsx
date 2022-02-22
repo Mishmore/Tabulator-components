@@ -86,36 +86,37 @@ const Tab2 = ({
         ))}
       </div>
       <div style={{ padding: '10px' }}>
+        {/* Uncontrolled Tabs */}
         {typeof initialActive === 'number' &&
-          children.map((elm: any) =>
-            cache.includes(elm.props.index) ? (
-              <div
-                key={`tab2-body-${elm.props.title}`}
-                style={{
-                  display:
-                    uncontrolledTab === elm.props.index ? 'block' : 'none',
-                }}
-              >
-                {elm}
-              </div>
-            ) : (
-              <></>
-            )
+          children.map(
+            (elm: any) =>
+              cache.includes(elm.props.index) && (
+                <div
+                  key={`tab2-body-${elm.props.title}`}
+                  style={{
+                    display:
+                      uncontrolledTab === elm.props.index ? 'block' : 'none',
+                  }}
+                >
+                  {elm}
+                </div>
+              )
           )}
+
+        {/* Controlled Tabs */}
         {typeof active === 'number' &&
-          children.map((elm: any) =>
-            cache.includes(elm.props.index) ? (
-              <div
-                key={`tab2-body-${elm.props.title}`}
-                style={{
-                  display: active === elm.props.index ? 'block' : 'none',
-                }}
-              >
-                {elm}
-              </div>
-            ) : (
-              <></>
-            )
+          children.map(
+            (elm: any) =>
+              cache.includes(elm.props.index) && (
+                <div
+                  key={`tab2-body-${elm.props.title}`}
+                  style={{
+                    display: active === elm.props.index ? 'block' : 'none',
+                  }}
+                >
+                  {elm}
+                </div>
+              )
           )}
       </div>
     </div>

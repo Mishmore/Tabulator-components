@@ -76,7 +76,10 @@ const Tab = ({
         ))}
       </div>
       <div style={{ padding: '10px' }}>
+        {/* Uncontrolled Tabs */}
         {typeof initialActive === 'number' && <>{children[uncontrolledTab!]}</>}
+
+        {/* Controlled Tabs */}
         {typeof active === 'number' && <>{children[active]}</>}
       </div>
     </div>
